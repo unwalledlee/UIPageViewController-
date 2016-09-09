@@ -13,6 +13,9 @@
 		9B4C153C1D82A94B00A808F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C153A1D82A94B00A808F0 /* Main.storyboard */; };
 		9B4C153E1D82A94B00A808F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C153D1D82A94B00A808F0 /* Assets.xcassets */; };
 		9B4C15411D82A94B00A808F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C153F1D82A94B00A808F0 /* LaunchScreen.storyboard */; };
+		9B4C154C1D82C7E900A808F0 /* EditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C154B1D82C7E900A808F0 /* EditController.m */; };
+		9B4C15501D82CF4100A808F0 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C154E1D82CF4100A808F0 /* TableViewCell.m */; };
+		9B4C15511D82CF4100A808F0 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C154F1D82CF4100A808F0 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		9B4C153D1D82A94B00A808F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B4C15401D82A94B00A808F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B4C15421D82A94B00A808F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4C154A1D82C7E900A808F0 /* EditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditController.h; sourceTree = "<group>"; };
+		9B4C154B1D82C7E900A808F0 /* EditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditController.m; sourceTree = "<group>"; };
+		9B4C154D1D82CF4100A808F0 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		9B4C154E1D82CF4100A808F0 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		9B4C154F1D82CF4100A808F0 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,11 @@
 				9B4C15351D82A94B00A808F0 /* AppDelegate.m */,
 				9B4C15371D82A94B00A808F0 /* ViewController.h */,
 				9B4C15381D82A94B00A808F0 /* ViewController.m */,
+				9B4C154A1D82C7E900A808F0 /* EditController.h */,
+				9B4C154B1D82C7E900A808F0 /* EditController.m */,
+				9B4C154D1D82CF4100A808F0 /* TableViewCell.h */,
+				9B4C154E1D82CF4100A808F0 /* TableViewCell.m */,
+				9B4C154F1D82CF4100A808F0 /* TableViewCell.xib */,
 				9B4C153A1D82A94B00A808F0 /* Main.storyboard */,
 				9B4C153D1D82A94B00A808F0 /* Assets.xcassets */,
 				9B4C153F1D82A94B00A808F0 /* LaunchScreen.storyboard */,
@@ -138,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4C15411D82A94B00A808F0 /* LaunchScreen.storyboard in Resources */,
+				9B4C15511D82CF4100A808F0 /* TableViewCell.xib in Resources */,
 				9B4C153E1D82A94B00A808F0 /* Assets.xcassets in Resources */,
 				9B4C153C1D82A94B00A808F0 /* Main.storyboard in Resources */,
 			);
@@ -151,7 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4C15391D82A94B00A808F0 /* ViewController.m in Sources */,
+				9B4C154C1D82C7E900A808F0 /* EditController.m in Sources */,
 				9B4C15361D82A94B00A808F0 /* AppDelegate.m in Sources */,
+				9B4C15501D82CF4100A808F0 /* TableViewCell.m in Sources */,
 				9B4C15331D82A94B00A808F0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

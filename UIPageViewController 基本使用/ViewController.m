@@ -7,16 +7,53 @@
 //
 
 #import "ViewController.h"
+#import "EditController.h"
 
 @interface ViewController ()<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @property (strong,nonatomic)UIPageViewController *pageVC;
-@property (strong,nonatomic)NSMutableArray *pageArr;
-@property (assign,nonatomic)NSInteger pageIndex;
+@property (strong,nonatomic)NSMutableArray <UIViewController *> *pageArr;
+@property (strong,nonatomic)NSMutableArray * totalPageArr;
 
 @end
 
 @implementation ViewController
+
+
+- (NSMutableArray *)totalPageArr{
+
+    if (_totalPageArr == nil) {
+        
+        _totalPageArr = [NSMutableArray array];
+    }
+    
+    return _totalPageArr;
+    
+}
+
+- (IBAction)editViewController:(UIBarButtonItem *)sender {
+    
+    EditController * vc = [[EditController alloc]init];
+    
+    vc.totalVC = [NSMutableArray arrayWithArray:self.totalPageArr];
+    
+    vc.currentVC = [NSMutableArray arrayWithArray:self.pageArr];
+    
+    vc.block = ^(NSArray * currentVC,NSArray * moreVC){
+    
+        [self.pageArr removeAllObjects];
+        
+        [self.pageArr addObjectsFromArray:currentVC];
+        
+        [self.pageVC setViewControllers:[NSArray arrayWithObject:self.pageArr[0]]  direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+            
+        }];
+        
+    };
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,7 +65,7 @@
     
 }
 
-
+//创建PageViewController
 - (void)setupPageViewController{
     
     self.pageVC = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
@@ -46,7 +83,7 @@
     
 }
 
-
+//创建PageViewController管理的子控制器
 - (void)setupPageChildControllers{
 
     UIViewController * page1 = [[UIViewController alloc]init];
@@ -69,7 +106,14 @@
     page5.view.backgroundColor = [UIColor cyanColor];
     page5.title = @"page5";
     
+    
+    UIViewController * page6 = [[UIViewController alloc]init];
+    page6.view.backgroundColor = [UIColor purpleColor];
+    page6.title = @"page6";
+    
     self.pageArr  = [NSMutableArray arrayWithArray:@[page1,page2,page3,page4,page5]];
+    
+    [self.totalPageArr addObjectsFromArray:@[page1,page2,page3,page4,page5,page6]];
     
     [self.pageVC setViewControllers:[NSArray arrayWithObject:self.pageArr[0]]  direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
         

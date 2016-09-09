@@ -17,7 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="专题" id="EOy-Ik-tx9"/>
+                    <navigationItem key="navigationItem" title="专题" id="EOy-Ik-tx9">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="BSy-tO-kXd">
+                            <color key="tintColor" red="0.12780912480000001" green="0.73271842279999999" blue="0.028062718850000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="editViewController:" destination="BYZ-38-t0r" id="yHc-mq-dtI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
