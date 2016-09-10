@@ -13,6 +13,8 @@
 
 @property (nonatomic,strong)NSMutableArray * moreVC;
 
+@property (nonatomic,strong)NSString * flag;
+
 @end
 
 @implementation EditController
@@ -38,6 +40,7 @@
             
         }
     }
+    
     
     [self.tableView reloadData];
 
@@ -74,6 +77,8 @@
         
         
     }
+    
+    self.flag = @"flag已立";
     
     [self.tableView reloadData];
     
@@ -172,6 +177,9 @@
     [super viewWillDisappear:animated];
     
     if (self.block) {
+        
+        if(!self.flag.length)
+            return;
         
         self.block(self.currentVC,self.moreVC);
     }

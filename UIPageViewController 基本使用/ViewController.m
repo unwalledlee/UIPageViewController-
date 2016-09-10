@@ -41,11 +41,12 @@
     
     vc.block = ^(NSArray * currentVC,NSArray * moreVC){
     
+    
         [self.pageArr removeAllObjects];
         
         [self.pageArr addObjectsFromArray:currentVC];
         
-        [self.pageVC setViewControllers:[NSArray arrayWithObject:self.pageArr[0]]  direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+        [self.pageVC setViewControllers:[NSArray arrayWithObject:self.pageArr[0]]  direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:^(BOOL finished) {
             
         }];
         
@@ -57,6 +58,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self setupPageViewController];
     
@@ -70,6 +73,7 @@
     
     self.pageVC = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
+    self.pageVC.automaticallyAdjustsScrollViewInsets = NO;
     
     [self addChildViewController:self.pageVC];
     
@@ -115,7 +119,7 @@
     
     [self.totalPageArr addObjectsFromArray:@[page1,page2,page3,page4,page5,page6]];
     
-    [self.pageVC setViewControllers:[NSArray arrayWithObject:self.pageArr[0]]  direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+    [self.pageVC setViewControllers:[NSArray arrayWithObject:self.pageArr[0]]  direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:^(BOOL finished) {
         
     }];
     
@@ -157,7 +161,7 @@
 
     if (completed) {
     
-        NSLog(@"%@",previousViewControllers[0].title);
+        
         
     }
 }
